@@ -30,7 +30,8 @@ public class converter {
     }
 
     public void start() {
-
+        window window = new window();
+        window.create();
     }
 
     public void setBaseFrom(int baseFrom) {
@@ -66,12 +67,14 @@ public class converter {
     }
 
     public String convert() {
-        String ans = "";
         String num = getNumber();
         int baseFrom = getBaseFrom();
         int baseTo = getBaseTo();
-        
-        setResult(ans);
-        return ans;
+        try {
+            setResult(Integer.toString(Integer.parseInt(num, baseFrom), baseTo));
+        } catch (Exception e) {
+            return "Error: Invalid input";
+        }
+        return getResult();
     }
 }
