@@ -31,7 +31,8 @@ public class converter {
 
     public void start() {
         window window = new window();
-        window.create();
+        window.create(this);
+        window.start();
     }
 
     public void setBaseFrom(int baseFrom) {
